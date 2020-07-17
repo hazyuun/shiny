@@ -1,5 +1,5 @@
 # shiny
-A tiny raytracer just for fun ! 
+A tiny raytracer just for fun ! <br /> ![C/C++ CI](https://github.com/A-Rain-Lover/shiny/workflows/C/C++%20CI/badge.svg)
 # Output example
 |Diffuse spheres around a reflective one| Same with perturbated reflexion |
 |----|----|
