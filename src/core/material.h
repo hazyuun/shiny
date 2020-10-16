@@ -12,4 +12,5 @@ struct Material{
 	float	m_albedo;
 	vec3	m_diffuse;
 	vec2	m_metal;
+	vec2	m_specular;
 };

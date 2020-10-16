@@ -11,20 +11,28 @@
 #include "material.h"
 #include "camera.h"
 #include "ray.h"
+#include "lights/directionnal.h"
+
 
 class Scene {
 	Camera*					m_camera;
 	/* Only spheres for now */
 	std::vector<Sphere> 	m_objects;
 
+	std::vector<DirLight> 	m_lights;
+
 public:
 	bool m_gamma_correction = true;
-	vec3					m_sky = vec3(0.50,0.55,0.99);
+	vec3 m_sky = vec3(0.50,0.55,0.99);
 
 	Scene(Camera* cam) :m_camera(cam) {}
 
-	inline void add_obj(Sphere& o){
+	inline void add_obj(Sphere o){
 		m_objects.push_back(o);
+	}
+
+	inline void add_light(DirLight l){
+		m_lights.push_back(l);
 	}
 
 	inline vec3 grad_bg(Ray r, vec3 color1, vec3 color2){

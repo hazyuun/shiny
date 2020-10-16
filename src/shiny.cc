@@ -6,8 +6,19 @@
 
 #include <iostream>
 #include "shiny.h"
+char usage(char* prgrm){
+	fprintf(stdout, "usage: %s width height samples output\n", prgrm);
+	return 1;
+}
+int main(int argc, char **argv) {
+	if(argc != 5){
+		return usage(argv[0]);
+	}
+	int width = atoi(argv[1]);
+	int height = atoi(argv[2]);
+	int samples = atoi(argv[3]);
+	const char* path = argv[4];
 
-int main() {
 	Camera cam = Camera(vec3(0.0f, 0.0f, 0.0f), 3.1415f/4);
 	Scene scn = Scene(&cam);
 
@@ -15,32 +26,35 @@ int main() {
 	Sphere	big = Sphere(vec3(-1.0f, -201.0f, -5.0f), 200.5f);
 
 	/* Diffuse white */
-	Material m1 = {0.8f, vec3(1.0f, 1.0f, 1.0f), vec2(0.0f)};
+	Material m1 = {0.8f, vec3(1.0f, 1.0f, 1.0f), vec2(0.0f), vec2(16.0f, 64.0f)};
 
 	/* "Yellowish" mirror */
-	Material m2 = {0.8f, vec3(0.9f, 0.8f, 0.65f), vec2(0.95f, 0.25f)};
+	Material m2 = {0.8f, vec3(0.5f, 0.4f, 0.3f), vec2(1.0f, 0.0f), vec2(16.0f, 128.0f)};
 
 	sph.m_material = m2;
 	big.m_material = m1;
 
 	/* Little spheres around */
+
 	for(int i = 14; i > 0; i--){
 		Sphere	s = Sphere(vec3(1.0f*cos(2*i*3.14f/15 + 3.14f/2), -0.42f, 1.0f*sin(2*i*3.14f/15+ 3.14f/2)-3.5f), 0.1f);
-		s.m_material = {0.8f, vec3(0.8f * i/15, 0.4f,  0.8f), vec2(0.0f)};
+		s.m_material = {0.8f, vec3(0.8f * i/15, 0.4f,  0.8f), vec2(0.0f), vec2(16.0f, 64.0f)};
 		scn.add_obj(s);
 	}
+
 
 	scn.add_obj(big);
 	scn.add_obj(sph);
 
-	scn.m_sky = vec3(0.95,0.9,1.0);
+	DirLight sun = DirLight(vec3(0.5, -1, -0.25), 4);
+	
+	scn.add_light(sun);
+	
+	scn.m_sky = vec3(0.4, 0.3, 0.9);
 
-	/* Low res : */
-	//scn.render(200*2,150*2,250,"output_low_res.ppm");
-	/* High res : */
-	scn.render(1080,720,600,"output_720p.ppm");
-	//scn.render(1920,1080,600,"output_1080p.ppm");
-
+	
+	scn.render(width, height, samples, path);
+	
 	return 0;
 }
 

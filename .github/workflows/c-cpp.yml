@@ -18,4 +18,4 @@ jobs:
     - name: outdir
       run: mkdir bin
     - name: make
-      run: make
+      run: make shiny-demo
