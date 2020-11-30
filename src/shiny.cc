@@ -46,11 +46,11 @@ int main(int argc, char **argv) {
 	scn.add_obj(big);
 	scn.add_obj(sph);
 
-	DirLight sun = DirLight(vec3(0.5, -1, -0.25), 4);
+	DirLight sun = DirLight(vec3(0.5, -1, -0.25), 6);
 	
 	scn.add_light(sun);
 	
-	scn.m_sky = vec3(0.4, 0.3, 0.9);
+	scn.m_sky = vec3(0.98, 0.70, 0.99);
 
 	
 	scn.render(width, height, samples, path);

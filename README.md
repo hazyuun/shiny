@@ -5,7 +5,7 @@ A tiny raytracer just for fun ! <br /> ![C/C++ CI](https://github.com/A-Rain-Lov
 |----|----|
 |<img src="https://github.com/A-Rain-Lover/shiny/blob/master/output/1.png" />|<img src="https://github.com/A-Rain-Lover/shiny/blob/master/output/2.png" />|
 
-|Directional light (yes I changed colors) |
+|Directional light (yes I changed sky color) |
 |----|
 |<img src="https://github.com/A-Rain-Lover/shiny/blob/master/output/3.png" />|
 # TODO : 

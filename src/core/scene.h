@@ -23,7 +23,7 @@ class Scene {
 
 public:
 	bool m_gamma_correction = true;
-	vec3 m_sky = vec3(0.50,0.55,0.99);
+	vec3 m_sky = vec3(0.99,0.99,0.99);
 
 	Scene(Camera* cam) :m_camera(cam) {}
 
