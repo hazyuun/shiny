@@ -26,7 +26,7 @@ int main(int argc, char **argv) {
 	Sphere	big = Sphere(vec3(-1.0f, -201.0f, -5.0f), 200.5f);
 
 	/* Diffuse white */
-	Material m1 = {0.8f, vec3(1.0f, 1.0f, 1.0f), vec2(0.0f), vec2(16.0f, 64.0f)};
+	Material m1 = {0.8f, vec3(0.75f, 0.7f, 0.85f), vec2(0.0f), vec2(16.0f, 64.0f)};
 
 	/* "Yellowish" mirror */
 	Material m2 = {0.8f, vec3(0.5f, 0.4f, 0.3f), vec2(1.0f, 0.0f), vec2(16.0f, 128.0f)};
