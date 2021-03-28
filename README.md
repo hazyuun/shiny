@@ -1,13 +1,13 @@
 # shiny
-A tiny raytracer just for fun ! <br /> ![C/C++ CI](https://github.com/computer-spectre/shiny/workflows/C/C++%20CI/badge.svg)
+A tiny raytracer just for fun ! <br /> ![C/C++ CI](https://github.com/hazyuun/shiny/workflows/C/C++%20CI/badge.svg)
 # Output example
 |Diffuse spheres around a reflective one| Same with perturbated reflexion |
 |----|----|
-|<img src="https://github.com/computer-spectre/shiny/blob/master/output/1.png" />|<img src="https://github.com/computer-spectre/shiny/blob/master/output/2.png" />|
+|<img src="output/1.png" />|<img src="output/2.png" />|
 
 |Directional light (yes I changed sky color) |
 |----|
-|<img src="https://github.com/computer-spectre/shiny/blob/master/output/3.png" />|
+|<img src="output/3.png" />|
 # TODO : 
 Objects : 
 - [x] Spheres
